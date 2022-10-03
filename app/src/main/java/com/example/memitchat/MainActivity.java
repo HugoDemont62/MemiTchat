@@ -23,12 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void get_info_user(View view){
+
+    public void get_info_user(View view) {
         ImageView profile_image = findViewById(R.id.profile_image_id);
         TextView name_txt = findViewById(R.id.name_txt_id);
         TextView email_txt = findViewById(R.id.email_txt_id);
 
     }
+
     //Fonction pour enregistrement
     public void load_after_reg(View view) {
 
@@ -59,28 +61,24 @@ public class MainActivity extends AppCompatActivity {
                                 //if the user was registered
                                 if (success) {
                                     //Account created with success!! A message is showed
-                                    Toast.makeText(MainActivity.this, "Account created",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Account created", Toast.LENGTH_SHORT).show();
 
                                     setContentView(R.layout.home);
 
                                 } else {
                                     //If there was an error
-                                    Toast.makeText(MainActivity.this, "Account creation failed",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Account creation failed", Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
                                 try {
                                     //Fetch the custom error message
                                     JSONObject jsonResponse = new JSONObject(response);
                                     String error = jsonResponse.getString("success");
-                                    Toast.makeText(MainActivity.this, error,
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
                                     e.printStackTrace();
                                 } catch (JSONException e2) {
                                     //If everything has gone wrong put the error message
-                                    Toast.makeText(MainActivity.this, "Error, try again later",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Error, try again later", Toast.LENGTH_SHORT).show();
                                     e.printStackTrace();
                                 }
                             }
@@ -90,28 +88,25 @@ public class MainActivity extends AppCompatActivity {
                         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                         queue.add(registerRequest);
                     } else {
-                        Toast.makeText(MainActivity.this, "The pseudo can't contains spaces or special characters",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "The pseudo can't contains spaces or special characters", Toast.LENGTH_SHORT).show();
                     }
                 }
                 //if the pseudo is to long
                 else {
-                    Toast.makeText(MainActivity.this, "The pseudo must be between 3 and 15 character",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "The pseudo must be between 3 and 15 character", Toast.LENGTH_SHORT).show();
                 }
             }
             //if the password isn't valid
             else {
-                Toast.makeText(MainActivity.this, "The password is not valid.",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "The password is not valid.", Toast.LENGTH_SHORT).show();
             }
         }
         //if the email isn't valid
         else {
-            Toast.makeText(MainActivity.this, "The e-mail is not valid.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "The e-mail is not valid.", Toast.LENGTH_SHORT).show();
         }
     }
+
     //LOGIN FONCTION
     public void load_after_log(View view) {
 
@@ -132,28 +127,24 @@ public class MainActivity extends AppCompatActivity {
                         //if the user was registered
                         if (success) {
                             //Account created with success!! A message is showed
-                            Toast.makeText(MainActivity.this, "Your connected",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Your connected", Toast.LENGTH_SHORT).show();
 
                             setContentView(R.layout.home);
 
                         } else {
                             //If there was an error
-                            Toast.makeText(MainActivity.this, "Retry you don't have an account with this information(s)",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Retry you don't have an account with this information(s)", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         try {
                             //Fetch the custom error message
                             JSONObject jsonResponse = new JSONObject(response);
                             String error = jsonResponse.getString("success");
-                            Toast.makeText(MainActivity.this, error,
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         } catch (JSONException e2) {
                             //If everything has gone wrong put the error message
-                            Toast.makeText(MainActivity.this, "Error, try again later",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Error, try again later", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                     }
@@ -164,12 +155,10 @@ public class MainActivity extends AppCompatActivity {
                 queue.add(LoginRequest);
 
             } else {
-                Toast.makeText(MainActivity.this, "The password is not valid.",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "The password is not valid.", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(MainActivity.this, "The e-mail is not valid.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "The e-mail is not valid.", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -178,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
     public void load_register_layout(View view) {
         setContentView(R.layout.register);
     }
+
     //Button pour load la page login
     public void load_login_layout(View view) {
         setContentView(R.layout.activity_main);
