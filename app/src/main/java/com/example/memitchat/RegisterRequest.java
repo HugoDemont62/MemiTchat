@@ -14,7 +14,7 @@ public class RegisterRequest extends StringRequest {
     public RegisterRequest(MainActivity mainActivity, String user_email, String user_name, String password,Response.Listener<String> listener) {
 
         super(Method.POST, "", listener, null);
-        params = new HashMap<>();
+        params = new HashMap<String, String>();
         params.put("useremail", user_email);
         params.put("username", user_name);
         params.put("password", password);
