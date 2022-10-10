@@ -6,23 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/blueblack">
 
-    <Button
-        android:id="@+id/buttonToLogin2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="604dp"
-        android:background="@color/trans"
-        android:backgroundTint="@color/trans"
-        android:onClick="load_login_layout"
-        android:shadowColor="@color/trans"
-        android:text="Ici pour aller au login"
-        android:textColor="@color/white"
-        android:textSize="7sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/profile_image_id"
         android:layout_width="wrap_content"
