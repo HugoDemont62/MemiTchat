@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         TextView name_txt = findViewById(R.id.name_txt_id);
         TextView email_txt = findViewById(R.id.email_txt_id);
 
+
+
     }
 
     //Fonction pour enregistrement
